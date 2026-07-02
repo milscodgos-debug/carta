@@ -1,0 +1,17 @@
+{
+  "name": "A Humanidade",
+  "short_name": "Humanidade",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#04111f",
+  "theme_color": "#f97316",
+  "description": "Uma carta visual e interativa sobre humanidade, aprendizado e legado.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

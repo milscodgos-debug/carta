@@ -1,0 +1,41 @@
+@media (max-width: 960px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .earth {
+    width: min(270px, 75vw);
+  }
+}
+
+@media (max-width: 720px) {
+  .top-controls {
+    left: 12px;
+    right: 12px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .top-controls select,
+  .top-controls button,
+  .top-controls input {
+    flex: 1;
+    min-width: 110px;
+  }
+
+  .hero {
+    padding-top: 126px;
+  }
+
+  .hero-card {
+    padding: 24px;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #assistantChat form {
+    flex-direction: column;
+  }
+}

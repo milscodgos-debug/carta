@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Humanidade</title>
+  <meta name="description" content="Uma experiencia cinematografica, interativa e multilingue sobre humanidade, tempo e legado.">
+  <meta name="theme-color" content="#f97316">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Humanidade">
+  <meta property="og:description" content="Leia, reflita e compartilhe uma mensagem sobre o impacto que deixamos no mundo.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Humanidade">
+  <meta name="twitter:description" content="Uma carta interativa sobre humanidade, aprendizado e legado.">
+  <link rel="canonical" href="https://example.com/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "A Humanidade",
+      "description": "Uma carta visual e interativa sobre humanidade, aprendizado e legado.",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+</head>
+<body>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="sky-overlay" aria-hidden="true"></div>
+
+  <nav class="top-controls" aria-label="Controles de acessibilidade e idioma">
+    <select id="langSelect" aria-label="Idioma">
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+      <option value="fr">FR</option>
+      <option value="de">DE</option>
+    </select>
+    <button id="themeToggle" class="btn-glass" type="button">Tema</button>
+    <input id="fontSizeRange" type="range" min="90" max="125" value="100" aria-label="Tamanho da fonte">
+    <button id="audioToggle" class="btn-glass" type="button" data-on="false" data-i18n="audioOn">Ativar musica</button>
+  </nav>
+
+  <header class="hero">
+    <article class="hero-card">
+      <div>
+        <p class="eyebrow" data-i18n="heroEyebrow">Carta aberta ao planeta</p>
+        <h1 data-i18n="heroTitle">A Humanidade Continua. E Voce Decide Como Participar.</h1>
+        <p data-i18n="heroLead">Voce esta vivo. Esse milagre biologico e cosmico traz uma responsabilidade simples: usar seu tempo para construir algo bom.</p>
+        <div class="cta-group">
+          <button id="startReading" class="btn-primary" type="button" data-i18n="startBtn">Comecar leitura</button>
+          <button id="narratorBtn" class="btn-glass" type="button" data-i18n="narrator">Narrar mensagem</button>
+          <button id="installBtn" class="btn-glass" type="button" data-i18n="install" hidden>Instalar app</button>
+        </div>
+      </div>
+      <div class="earth-wrap">
+        <div class="earth" role="img" aria-label="Planeta Terra estilizado"></div>
+        <p class="earth-caption">Globo vivo em movimento</p>
+      </div>
+    </article>
+  </header>
+
+  <main>
+    <p id="typingText" class="typing" aria-live="polite"></p>
+
+    <section id="inicio" class="grid-cards" aria-label="Carta">
+      <article class="card reveal">
+        <h2 data-i18n="card1Title">Voce existe.</h2>
+        <p data-i18n="card1Text">Entre bilhoes de estrelas e incontaveis eventos do universo, sua consciencia surgiu. Sua combinacao de historia, dor e potencial nunca se repetira.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card2Title">Aprenda sempre.</h2>
+        <p data-i18n="card2Text">Conhecimento e liberdade em movimento. Leia, teste, pergunte e duvide com humildade. O futuro favorece mentes curiosas.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card3Title">Tempo e legado.</h2>
+        <p data-i18n="card3Text">Dinheiro volta. Objetos voltam. Minutos nao voltam. Cada dia e uma pequena votacao sobre a pessoa que voce quer se tornar.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card4Title">Bondade e forca.</h2>
+        <p data-i18n="card4Text">Empatia nao e fragilidade. E inteligencia emocional aplicada. Uma palavra pode ferir por anos; outra pode salvar uma vida inteira.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card5Title">Fracassos uteis.</h2>
+        <p data-i18n="card5Text">Errar nao encerra a historia. Errar ensina o caminho. Toda conquista robusta nasce de tentativas imperfeitas repetidas com coragem.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card6Title">Corpo e mente.</h2>
+        <p data-i18n="card6Text">Seu corpo e o lugar onde sua consciencia habita. Movimente-se, descanse, respire e proteja a qualidade daquilo que voce consome mentalmente.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card7Title">Tecnologia com etica.</h2>
+        <p data-i18n="card7Text">A tecnologia amplia intencoes. Que ela seja ponte para conhecimento, inclusao e cuidado, nunca substituta do afeto humano.</p>
+      </article>
+      <article class="card reveal">
+        <h2 data-i18n="card8Title">Planeta compartilhado.</h2>
+        <p data-i18n="card8Text">Somos visitantes temporarios. O ambiente que deixamos e uma carta silenciosa para quem ainda nem nasceu.</p>
+      </article>
+    </section>
+
+    <section class="tools reveal" aria-label="Acessibilidade">
+      <h2 data-i18n="toolsTitle">Interatividade</h2>
+      <p data-i18n="toolsText">Ajuste o modo visual, o tamanho da fonte e use narracao para uma leitura mais acessivel.</p>
+    </section>
+
+    <section class="share reveal" aria-label="Compartilhar">
+      <h2 data-i18n="shareTitle">Compartilhe esta mensagem</h2>
+      <div class="share-grid">
+        <button class="btn-primary" data-share="native" type="button">Share API</button>
+        <button class="btn-glass" data-share="whatsapp" type="button">WhatsApp</button>
+        <button class="btn-glass" data-share="telegram" type="button">Telegram</button>
+        <button class="btn-glass" data-share="facebook" type="button">Facebook</button>
+        <button class="btn-glass" data-share="x" type="button">X</button>
+        <button class="btn-glass" data-share="linkedin" type="button">LinkedIn</button>
+      </div>
+      <img id="qrCode" alt="QR code para compartilhar este site">
+    </section>
+
+    <section class="assistant reveal" aria-label="Assistente">
+      <h2 data-i18n="assistantTitle">Assistente de reflexoes</h2>
+      <p data-i18n="assistantHint">Converse sobre tempo, proposito, medo ou equilibrio mental.</p>
+      <div id="assistantChat">
+        <div id="assistantLog"></div>
+        <form id="assistantForm">
+          <input id="assistantInput" type="text" data-i18n-placeholder="assistantPlaceholder" placeholder="Digite sua pergunta...">
+          <button class="btn-primary" type="submit" data-i18n="assistantSend">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="tools reveal" aria-label="Estatisticas">
+      <h2 data-i18n="statsTitle">Estatisticas locais</h2>
+      <div class="stat-grid">
+        <div class="stat"><label data-i18n="statsVisits">Visitas</label><strong id="visitCount">0</strong></div>
+        <div class="stat"><label data-i18n="statsCountry">Regiao do navegador</label><strong id="countryCode">--</strong></div>
+        <div class="stat"><label data-i18n="statsLang">Idioma detectado</label><strong id="languageUsed">--</strong></div>
+        <div class="stat"><label data-i18n="statsRead">Tempo medio de leitura</label><strong id="avgRead">0s</strong></div>
+        <div class="stat"><label data-i18n="statsShares">Compartilhamentos</label><strong id="shareCount">0</strong></div>
+      </div>
+    </section>
+
+    <section id="finale" class="finale reveal" aria-label="Final">
+      <div class="sunrise" aria-hidden="true"></div>
+      <h2 data-i18n="finaleTitle">A escolha comeca agora</h2>
+      <p data-i18n="finaleQuote">O universo continuara sua jornada. A questao e: qual marca voce deixara na vida das pessoas?</p>
+      <button class="btn-primary" data-share="native" type="button" data-i18n="finaleButton">Compartilhe esta mensagem</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Humanidade 2026</p>
+  </footer>
+
+  <script src="js/language.js" defer></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/earth.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/share.js" defer></script>
+  <script src="js/visitor-counter.js" defer></script>
+  <script src="js/ai-assistant.js" defer></script>
+  <script src="js/pwa.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
